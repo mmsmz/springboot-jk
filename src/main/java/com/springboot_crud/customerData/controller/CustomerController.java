@@ -19,6 +19,12 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
+    @GetMapping("/getData")
+    public String insertCustomer() {
+        return "Hello World Testing Jenkins";
+    }
+
+
     @PostMapping("/customer")
     public ResponseEntity<String> insertCustomer(@RequestBody RequestCustomerDto requestCustomerDto) {
         String status = customerService.insertCustomerDetails(requestCustomerDto);
